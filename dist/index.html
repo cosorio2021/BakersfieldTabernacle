@@ -15,62 +15,109 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
+    
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+        
+                <!-- Logo on upper-left of navigation bar: https://jsfiddle.net/5Gy6K/-->
+                <a class = "logo" href="#main"><img src = "assets/img/logo_grayscale.png"></a>
+                
+                <!-- Get today's date -->
+                <div id="current_date">
+                    <div id="current_date">
+                      <script>
+                          const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                          document.getElementById("current_date").innerHTML = new Date().toLocaleDateString('en-US', options);
+                      </script>
+                    </div>
+                  </div>
+
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+
         <!-- Masthead-->
-        <header class="masthead">
+        <header class="masthead" id = "main">
             <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
                 <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <h1 class="mx-auto my-0 text-uppercase">Grayscale</h1>
-                        <h2 class="text-white-50 mx-auto mt-2 mb-5">A free, responsive, one page Bootstrap theme created by Start Bootstrap.</h2>
-                        <a class="btn btn-primary" href="#about">Get Started</a>
-                    </div>
+
+                        <img class="img-fluid" src="assets/img/logo_grayscale.png" alt="..." />  
+
                 </div>
             </div>
         </header>
+
         <!-- About-->
-        <section class="about-section text-center" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8">
-                        <h2 class="text-white mb-4">Built with Bootstrap 5</h2>
+        <section class= "about-section text-center" id="about">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <!-- Align images side by side: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_images_side_by_side-->
+                    <!-- Adjust alignments/columns https://getbootstrap.com/docs/5.3/layout/grid/-->
+                    <div class="row gx-4 gx-lg-5 justify-content-center">
+                        <div class="col-lg-4">
+                            <img class="img-fluid" src="assets/img/william_branham.jpeg" alt="..." />
+                            <p class="text-white-50"> "Nuestro Padre Celestial, Te damos gracias por Jesucristo,
+                                por Sus grandes promesas que nos ha dado. Te agradecemos
+                                por todas estas cosas. Estamos con gran expectativa aquí en
+                                esta ciudad entre estos buenos Cristianos. Esperando verlo a Él
+                                moverse entre nosotros, mostrando Su presencia, dando fe a la
+                                gente, inspirándoles a creer. Ese es nuestro propósito al estar
+                                aquí, Padre. Sabemos que podemos confiar en Ti. No seremos
+                                decepcionados. Porque lo pedimos en Su Nombre. Amén."
+                                <a href="https://branham.org/en/messagestream/SPN=64-0206E">Hno. William Branham</a>
+                                </p>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="text-center">    
+                                <!-- Call Verse-->
+                                <h2 class="text-white-50 ">
+                                    <div id="dailyVersesWrapper"></div>
+                                    <script async defer src="https://dailyverses.net/get/verse.js?language=niv"></script>                            
+                                </h2> 
+                                <img class="img-fluid" src="assets/img/logo.png" alt="..." />
+                            </div>     
+                        </div>
+                        <div class="col-lg-4">
+                            <img class="img-fluid" src="assets/img/Jesus.jpeg" alt="..." />
+                                <p class="text-white-50"> Porque de tal manera amó Dios al mundo, que ha dado á su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna. - San Juan 3:16
+                                <br>
+                                For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. - John 3:16
+                        </div>
+                        <h2 class="text-white mb-4">Dios les bendiga, God bless you</h2>
                         <p class="text-white-50">
-                            Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
-                            <a href="https://startbootstrap.com/theme/grayscale/">the preview page.</a>
-                            The theme is open source, and you can use it for any purpose, personal or commercial.
+                            Le damos la bienvenida a nuestra página donde publicaremos los próximos eventos y actividades que giran en torno a Dios. 
+                            <!-- <a href="https://startbootstrap.com/theme/grayscale/">the preview page.</a>--> 
                         </p>
                     </div>
                 </div>
-                <img class="img-fluid" src="assets/img/ipad.png" alt="..." />
             </div>
         </section>
+
         <!-- Projects-->
         <section class="projects-section bg-light" id="projects">
-            <div class="container px-4 px-lg-5">
+            <div class="container px-4 px-lg-5 ">
                 <!-- Featured Project Row-->
                 <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="..." /></div>
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/greenview.jpg" alt="..." /></div>
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
-                            <h4>Shoreline</h4>
-                            <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                            <h4>Bakersfield</h4>
+                            <p class="text-white-50 mb-0">Founder: Froylan Osorio
+                                <br>
+                                In-Charge: Heriberto Osorio
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -104,6 +151,7 @@
                 </div>
             </div>
         </section>
+
         <!-- Signup-->
         <section class="signup-section" id="signup">
             <div class="container px-4 px-lg-5">
@@ -158,7 +206,7 @@
                                 <i class="fas fa-map-marked-alt text-primary mb-2"></i>
                                 <h4 class="text-uppercase m-0">Address</h4>
                                 <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+                                <div class="small text-black-50">424 Kentucky Street, Bakersfield, CA 93305</div>
                             </div>
                         </div>
                     </div>
@@ -168,7 +216,8 @@
                                 <i class="fas fa-envelope text-primary mb-2"></i>
                                 <h4 class="text-uppercase m-0">Email</h4>
                                 <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
+                                <div class="small text-black-50"><a href="#!">bakersfieldtabernacle424@gmail.com
+                                </a></div>
                             </div>
                         </div>
                     </div>
@@ -178,14 +227,14 @@
                                 <i class="fas fa-mobile-alt text-primary mb-2"></i>
                                 <h4 class="text-uppercase m-0">Phone</h4>
                                 <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50">+1 (555) 902-8832</div>
+                                <div class="small text-black-50">TBD</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="social d-flex justify-content-center">
-                    <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                    <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="mx-2" href="https://www.youtube.com/@TabernaculodeBakersfield"><i class="fab fa-youtube"></i></a>
+                    <a class="mx-2" href="https://www.facebook.com/froylan.osorio.7564"><i class="fab fa-facebook-f"></i></a>
                     <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
                 </div>
             </div>
